@@ -1,0 +1,48 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<html lang="pt-br">
+	<head>
+		<title>Interação com Arduino</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<style>
+			.container{
+				margin: 200px 0 0 500px;
+			}
+			.btn{
+				height: 50px;
+				background-color: #fff;
+				border
+			}
+			.mensagem{
+				margin-top: 20px;
+			}
+		</style>
+	</head>
+	<body onLoad="load();">
+		<div class="container">
+			<div class="container-btn">
+				<button type="button" class="btn" value="apertou peitinho esquerdo, ligou LED1.">( . )</button>
+				<button type="button" class="btn" value="apertou peitinho direito, ligou LED2">( . )</button>
+			</div>
+			<div class="mensagem">
+				<span></span>
+			</div>
+		</div>
+		
+		<script>
+			function load(){
+				var elements = document.querySelectorAll('.btn');
+				elements.forEach(e => {
+					var txt = e.value;
+					e.onclick = function(){ 
+						var msg = document.querySelector('.mensagem span');
+						msg.innerText = txt;
+					}
+				});
+			}
+		</script>
+	</body>
+</html>
